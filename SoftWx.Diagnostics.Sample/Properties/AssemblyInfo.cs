@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SoftWx.Diagnostics")]
-[assembly: AssemblyDescription("Library for benchmarking .Net code.")]
+[assembly: AssemblyTitle("SoftWx.Diagnostics.Sample")]
+[assembly: AssemblyDescription("Sample use of SoftWx.Diagnostics library")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("SoftWx, Inc.")]
-[assembly: AssemblyProduct("SoftWx.Diagnostics")]
-[assembly: AssemblyCopyright("Copyright © 2013-2015 SoftWx, Inc.")]
+[assembly: AssemblyProduct("Sde.Diagnostics.Sample")]
+[assembly: AssemblyCopyright("Copyright © 2015 SoftWx, Inc.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("4592e861-0505-43ed-9024-6382c964689d")]
+[assembly: Guid("bec11a86-fe30-412b-90e0-519ae2244a04")]
 
 // Version information for an assembly consists of the following values:
 //   Major Version.Minor Version.Build Number
