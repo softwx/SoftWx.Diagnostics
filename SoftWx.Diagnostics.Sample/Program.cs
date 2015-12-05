@@ -18,12 +18,9 @@ namespace SoftWx.Diagnostics.Sample {
             string s1 = DateTime.UtcNow.ToString();
             string s2 = DateTime.UtcNow.ToString();
             string s;
-            new Bench().Time("String Concat", () => {
+            bench.Time("String Concat", () => {
                 s = s1 + s2;
             });
-
-            // time Dictionary Remove
-            new Bench().Time("Dictionary.Remove(method)", DictionaryRemove, 100);
 
             // time int division
             int i0 = 0;
@@ -35,6 +32,18 @@ namespace SoftWx.Diagnostics.Sample {
                 i0 /= 5; i0 /= 5; i0 /= 5; i0 /= 5; i0 /= 5;
                 i0 /= 5; i0 /= 5; i0 /= 5; i0 /= 5; i0 /= 5;
             }, 10);
+
+            // time Dictionary Remove
+            const int DictCount = 100;
+            bench.Time("Dictionary.Remove(lambda)", (tc) => {
+                tc.Pause();
+                var d = new System.Collections.Generic.Dictionary<int, string>(DictCount);
+                for (int i = 0; i < DictCount; i++) d.Add(i, i.ToString());
+                tc.Resume();
+                for (int i = 0; i < DictCount; i++) d.Remove(i);
+            }, DictCount);
+
+            bench.Time("Dictionary.Remove(method)", DictionaryRemove, DictCount);
 
             // size examples
             Console.WriteLine(bench.ByteSize(() => { return new S1(); }));
